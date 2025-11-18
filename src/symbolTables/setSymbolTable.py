@@ -1,23 +1,37 @@
 class SetSymbolTable:
-    def __init__(self, size: int):
-        self.size = size
-        self.arrayHash = [set() for _ in range(size)] # Cria um array preenchido com sets
-        
-    def put(self, word: str):
-        self.arrayHash[self._hash(word)].add(word) # Adiciona um elemento
-        
-    def get(self, word: str): 
-        setWords = self.arrayHash[self._hash(word)] # Recupera um elemento
-        
-        if word in setWords:
-            return word
-        return None
-    
-    def delete(self, word: str): # Deleta um elemento 
-        setWords = self.arrayHash[self._hash(word)]
+    def __init__(self):
+        self.setWords = set() # Cria uma set() do python
                 
-        if self.get(word) is not None:
-            setWords.remove(word) 
+    # Adiciona elemento
+    def put(self, word: str):
+        """
+        Adiciona o elemento passado como parametro no set
+        Args:
+            word (str): Elemento que vai ser inserido no set
+        """
+        self.setWords.add(word)
+    
+    # Recupera elemento
+    def get(self, word: str) -> str | None:
+        """
+        Recupera a palavra passada como parametro, caso ela esteja no set
+        Args:
+            word (str): Palavra que vai ser procurada
+
+        Returns:
+               str | None: Retorna a palavra caso esteja no set, caso contrario retorna None
+        """
         
-    def _hash(self, word: str):
-        return hash(word) % self.size
+        if word in self.setWords:
+            return word
+        return None 
+    
+    # Deleta elemento
+    def delete(self, word: str):
+        """
+        Remove a palavra passada como parametro do set se ela estiver no set
+        Args:
+            word (str): Palavra para ser removida do set
+        """
+        if self.get(word) is not None:
+            self.setWords.remove(word)

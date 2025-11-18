@@ -1,21 +1,41 @@
 class ListSymbolTable:
-    def __init__(self, size: int):
-        self.size = size
-        self.arrayHash = [[] for _ in range(size)] # Cria uma lista do python
+    def __init__(self):
+        self.listWords = list() # Cria uma lista do python
                 
+    # Adiciona elemento
     def put(self, word: str):
-        self.arrayHash[self._hash(word)].append(word) # Adiciona a palavra em uma posicao da lista #type: ignore
+        """
+        Adiciona o elemento passado como parametro na lista
+        Args:
+            word (str): Elemento que vai ser inserido na lista
+        """
+        self.listWords.append(word)
+    
+    # Recupera elemento
+    def get(self, word: str) -> str | None:
+        """
+        Recupera a palavra passada como parametro, caso ela esteja na lista
+        Args:
+            word (str): Palavra que vai ser procurada
+
+        Returns:
+               str | None: Retorna a palavra caso esteja na lista, caso contrario retorna None
+        """
         
-    def get(self, word: str):
-        for wordList in self.arrayHash[self._hash(word)]: # Recupera a palavra
-            if word == wordList:
-                return wordList # caso encontre a palavra
+        if word in self.listWords:
+            return word
+        return None 
     
-        return None # Caso nao encontre a palavra 
-    
+    # Deleta elemento
     def delete(self, word: str):
-        if self.get(word) != None:
-            self.arrayHash[self._hash(word)].remove(word) # Deleta a palavra
+        """
+        Remove a palavra passada como parametro da lista se ela estiver na lista
+        Args:
+            word (str): Palavra para ser removida da lista
+        """
         
-    def _hash(self, word: str):
-        return hash(word) % self.size # Funcao hash
+        if self.get(word) is not None:
+            self.listWords.remove(word)
+            
+    def __str__(self):
+        return str(self.listWords)
