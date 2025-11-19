@@ -11,14 +11,10 @@ from symbolTables.defaultDicitSymbolTable import DefaultDictSymbolTable
 from symbolTables.orderedDictSymbolTable import OrderedDictSymbolTable
 from symbolTables.userDictSymbolTable import UserDictSymbolTable
 from symbolTables.userListSymbolTable import UserListSymbolTable
-from autoTest import saveAutoTestResults
+from autoTest import saveAutoTestResults, autoTestGet, autoTestInsert, autoTestDelete
+from textTreatment.readJson import readDataBase
+from generatesGraphs.generatesBarChart import barChart
 from pathlib import Path
-
-#path = Path.home() / "programacao" / "python" / "PythonStructuresAnalysis" / "assets" / "leipzig100k.txt" 
-
-#text = Text(path)
-#words = text.getWords()
-#size = len(words)
 
 # Cria a tabela com os abjetos repectivos 
 # tables = {
@@ -57,4 +53,34 @@ from pathlib import Path
 #print(tables["userDict"])
 #print(tables["userList"])
 
-saveAutoTestResults()
+
+# Teste de insercao
+# pathText = Path.home() / "programacao" / "python" / "PythonStructuresAnalysis" / "assets" / "leipzig100k.txt"
+# words = Text(pathText).getWords() # Ler palavras do arquivo 
+
+# path = Path.home() / "programacao" / "python" / "PythonStructuresAnalysis" / "src" / "database" / "insertionTime.json" 
+# saveAutoTestResults(str(path), autoTestInsert(words))
+
+# Teste de busca
+# pathText = Path.home() / "programacao" / "python" / "PythonStructuresAnalysis" / "assets" / "leipzig100k.txt"
+# words = Text(pathText).getWords() # Ler palavras do arquivo 
+
+# path = Path.home() / "programacao" / "python" / "PythonStructuresAnalysis" / "src" / "database" / "getTime.json" 
+# saveAutoTestResults(str(path), autoTestGet(words, ["Lisbon", "NASA", "Kyunghee", "Konkuk", "Sogang", "momentarily", "rubella", "vaccinations", "government", "Authorities"]))
+
+# Teste de delete
+# pathText = Path.home() / "programacao" / "python" / "PythonStructuresAnalysis" / "assets" / "leipzig100k.txt"
+# words = Text(pathText).getWords() # Ler palavras do arquivo 
+
+# path = Path.home() / "programacao" / "python" / "PythonStructuresAnalysis" / "src" / "database" / "deleteTime.json" 
+# saveAutoTestResults(str(path), autoTestDelete(words, ["Lisbon", "NASA", "Kyunghee", "Konkuk", "Sogang", "momentarily", "rubella", "vaccinations", "government", "Authorities"]))
+
+# datas = dict(readDataBase( path = Path.home() / "programacao" / "python" / "PythonStructuresAnalysis" / "src" / "database" / "insertionTime.json"))
+# structuresName = []
+# times = []
+
+# for name, time in datas.items():
+#     structuresName.append(name)
+#     times.append(time * 1000) # Converte pra milisegundos
+        
+# barChart(structuresName, times)

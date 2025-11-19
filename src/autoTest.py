@@ -17,11 +17,6 @@ from symbolTables.userDictSymbolTable import UserDictSymbolTable
 from symbolTables.userListSymbolTable import UserListSymbolTable
 
 
-path = Path.home() / "programacao" / "python" / "PythonStructuresAnalysis" / "assets" / "leipzig100k.txt"
-words = Text(path).getWords() # Ler palavras do arquivo 
-
-
-
 # Cria um dicionario com as instancias de cada tabela de simbolos 
 def create_tables():
     return {
@@ -40,7 +35,7 @@ def create_tables():
     }
 
 # Realiza os testes de forma automatica 
-def autoTestInsert(words: list[str], steps=1):
+def autoTestInsert(words: list[str], steps=10):
     results = {}
 
     for name in create_tables().keys():
@@ -66,13 +61,76 @@ def autoTestInsert(words: list[str], steps=1):
 
     return results
 
+# Realiza os testes de forma automatica 
+def autoTestGet(words: list[str], getWords: list[str], steps=10):
+    structures = create_tables()
+    results = {}
+
+    # Preenche as estruturas
+    for name in structures.keys():
+        if name == "tuple": # Caso especial de insercao para tuplas
+            structures[name].put(words)
+        else:
+            for w in words:
+                structures[name].put(w)
+                
+    # Pesquisa as palavras
+    for name in structures.keys():
+        total_time = 0.0
+        
+        for _ in range(steps):
+            
+            start = time.perf_counter() # Inicio do tempo de execucao
+            
+            # Realiza a busca por cada palavra            
+            for word in getWords:
+                structures[name].get(word)
+
+            end = time.perf_counter() # Fim do tempo de execucao
+
+            total_time += (end - start)
+        
+        results[name] = total_time / steps
+    
+    return results
+
+# Realiza os testes de forma automatica 
+def autoTestDelete(words: list[str], getWords: list[str], steps=10):
+    structures = create_tables()
+    results = {}
+
+    # Preenche as estruturas
+    for name in structures.keys():
+        if name == "tuple": # Caso especial de insercao para tuplas
+            structures[name].put(words)
+        else:
+            for w in words:
+                structures[name].put(w)
+                
+    # Deleta palavras
+    for name in structures.keys():
+        total_time = 0.0
+        
+        for _ in range(steps):
+            
+            start = time.perf_counter() # Inicio do tempo de execucao
+            
+            # Realiza a busca por cada palavra            
+            for word in getWords:
+                structures[name].delete(word)
+
+            end = time.perf_counter() # Fim do tempo de execucao
+
+            total_time += (end - start)
+        
+        results[name] = total_time / steps
+    
+    return results
+
 
 # Salva resultado em um json
-def saveAutoTestResults():
-    results = autoTestInsert(words, steps=5)
-
-    output_path = Path("data_base.json")
-    with open(output_path, "w", encoding="utf-8") as file:
+def saveAutoTestResults(path: str, results: dict):
+    with open(path, "w", encoding="utf-8") as file:
         json.dump(results, file, indent=4)
 
-    print("\nJSON salvo em:", output_path.resolve())
+    print("\nJSON salvo em:", path)
