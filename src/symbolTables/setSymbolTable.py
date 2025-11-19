@@ -35,3 +35,6 @@ class SetSymbolTable:
         """
         if self.get(word) is not None:
             self.setWords.remove(word)
+            
+    def __str__(self):
+        return str(len(self.setWords))
