@@ -2,7 +2,6 @@ from collections import defaultdict
 
 class DefaultDictSymbolTable:
     def __init__(self):
-        # defaultdict precisa de uma função. Usamos lambda: None para retornar None.
         self.defaultDictWord = defaultdict(lambda: None)
 
     def put(self, word: str):
@@ -16,5 +15,4 @@ class DefaultDictSymbolTable:
             del self.defaultDictWord[word]
 
     def __str__(self):
-        # converter para dict remove o comportamento de defaultdict na impressão
         return str(dict(self.defaultDictWord))
