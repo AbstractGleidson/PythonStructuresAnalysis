@@ -12,9 +12,9 @@ def barChart(names: list[str], times: list[float]):
 
     # Tamanho do gráfico
     fig, axis = pyplot.subplots(figsize=(10, 6))
-    axis.set_title("Comparação entre o tempo de exclusão em estruturas Python") # Titulo do grafico 
+    axis.set_title("Comparação entre o tempo de consulta em estruturas Python") # Titulo do grafico 
     axis.set_xlabel("Estruturas Python") # label para o eixo X
-    axis.set_ylabel("Tempo de exclusão (ms)") # label para o eixo y
+    axis.set_ylabel("Tempo de consulta (ms)") # label para o eixo y
 
     axis.bar(names, times, color=colors) # Gera as
 
@@ -29,5 +29,5 @@ def barChart(names: list[str], times: list[float]):
     axis.grid(axis="y", linestyle="--", alpha=0.4)
 
     pyplot.tight_layout()
-    #pyplot.savefig("BarChartDelete.png", dpi=600, bbox_inches="tight")
+    #pyplot.savefig("BarChartGet.png", dpi=600, bbox_inches="tight")
     pyplot.show()
