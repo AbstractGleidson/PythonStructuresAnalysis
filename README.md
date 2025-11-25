@@ -42,7 +42,7 @@ Este projeto visa descrever e avaliar o funcionamento das estruturas de dados do
 ### ​3. Tempo de Exclusão ❌
 ​- **Eficientes**: Estruturas baseadas em hash (dict, set, etc.) removem elementos quase instantaneamente após localizar a chave.
 
-- **​Intermediárias**: Estruturas lineares precisam buscar o elemento sequencialmente antes de removê-lo, elevando o custo.
+- **Intermediárias**: Estruturas lineares precisam buscar o elemento sequencialmente antes de removê-lo, elevando o custo.
 
 ​- **Ineficientes**: Estruturas imutáveis (tuple) exigem a cópia de toda a estrutura (menos o item removido) para um novo objeto.
 
