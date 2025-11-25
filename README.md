@@ -3,7 +3,7 @@
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Gráficos%202D-red?logo=plotly&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-Versionamento-orange?logo=git&logoColor=white)
 
-"Este projeto visa descrever e avaliar o funcionamento das estruturas de dados do Python e de seu módulo **collections**. Através de testes de desempenho (benchmarks), analisamos o custo computacional das operações de **inserção, busca e remoção**, ilustrando as diferenças entre estruturas baseadas em **hashing, sequenciais e imutáveis** por meio de gráficos comparativos."
+Este projeto visa descrever e avaliar o funcionamento das estruturas de dados do Python e de seu módulo **collections**. Através de testes de desempenho (benchmarks), analisamos o custo computacional das operações de **inserção, busca e remoção**, ilustrando as diferenças entre estruturas baseadas em **hashing, sequenciais e imutáveis** por meio de gráficos comparativos.
 ---
 
 ## 👨‍💻 Integrantes do Grupo
