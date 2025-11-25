@@ -1,4 +1,4 @@
-# Trabalho em Grupo — Estrutura de Dados: Fila de Atendimento
+# Trabalho em Grupo — Estrutura de Dados: Python Collections 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Gráficos%202D-red?logo=plotly&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-Versionamento-orange?logo=git&logoColor=white)
