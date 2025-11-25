@@ -28,16 +28,16 @@ Este projeto visa descrever e avaliar o funcionamento das estruturas de dados do
 ​Com base nos testes de tempo de execução, chegamos às seguintes conclusões sobre o comportamento das estruturas:
 
 ### ​1. Tempo de Inserção ⏱️
-​- **Mais Rápidas (Lineares)**: list, deque e userList. Funcionam como vetores dinâmicos ou listas duplamente encadeadas, sendo extremamente otimizadas para inserções no final (e extremidades, no caso do deque).
+- **Mais Rápidas (Lineares)**: list, deque e userList. Funcionam como vetores dinâmicos ou listas duplamente encadeadas, sendo extremamente otimizadas para inserções no final (e extremidades, no caso do deque).
 
-​- **Desempenho Médio (Hashing)**: dict, set, defaultDict, orderedDict. O cálculo do hash e o tratamento de colisões adicionam um custo extra em comparação à simples alocação sequencial.
+- **Desempenho Médio (Hashing)**: dict, set, defaultDict, orderedDict. O cálculo do hash e o tratamento de colisões adicionam um custo extra em comparação à simples alocação sequencial.
 
 - **​Mais Lentas (Imutáveis)**: tuple e namedTuple. Por serem imutáveis, qualquer "inserção" exige a recriação completa do objeto, tornando-as inviáveis para cenários de escrita frequente.
 
 ### ​2. Tempo de Consulta (Busca) 🔍
 ​- **Excelência (Hashing)**: dict, set, Counter e ChainMap apresentaram tempos próximos de O(1). São as escolhas ideais para grandes volumes de dados onde a velocidade de acesso é crítica.
 
-​- **Baixo Desempenho (Lineares)**: list, tuple e deque dependem de varredura sequencial O(n). O tempo de busca cresce linearmente com o tamanho da coleção.
+- **Baixo Desempenho (Lineares)**: list, tuple e deque dependem de varredura sequencial O(n). O tempo de busca cresce linearmente com o tamanho da coleção.
 
 ### ​3. Tempo de Exclusão ❌
 ​- **Eficientes**: Estruturas baseadas em hash (dict, set, etc.) removem elementos quase instantaneamente após localizar a chave.
