@@ -16,6 +16,4 @@ Este projeto visa descrever e avaliar o funcionamento das estruturas de dados do
 ## 🛠️ Ferramentas Utilizadas
 - **[Python](https://www.python.org/)** — linguagem de programação principal do projeto.  
 - **[Git](https://git-scm.com/)** — versionamento e controle do código.  
-- ![Matplotlib](https://img.shields.io/badge/Matplotlib-Gráficos%202D-red?logo=plotly&logoColor=white)
-
----
+- **[Matplotlib](https://matplotlib.org/)** — geração de gráficos de desempenho das estruturas do python collections
